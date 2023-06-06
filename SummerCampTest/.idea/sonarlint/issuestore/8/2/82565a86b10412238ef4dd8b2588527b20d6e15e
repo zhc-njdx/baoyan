@@ -1,0 +1,29 @@
+
+
+java:S1319W"fThe type of "result" should be an interface such as "List" rather than the implementation "ArrayList".(Ï¸Âšşÿÿÿÿ
+|
+java:S1319X"gThe type of "result1" should be an interface such as "List" rather than the implementation "ArrayList".(¯Ï‚
+k	java:S117["QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ıÈåùÿÿÿÿ
+k	java:S117\"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•½Å©ıÿÿÿÿ
+k	java:S117v"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ıÈåùÿÿÿÿ
+f	java:S117w"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğæ“°
+m
+java:S1104W"RMake result a static final constant or non-public and provide accessors if needed.(Ï¸Âšşÿÿÿÿ
+h
+java:S1104X"SMake result1 a static final constant or non-public and provide accessors if needed.(¯Ï‚
+[
+java:S2095G"EUse try-with-resources or close this "Scanner" in a "finally" clause.(ñëÍÕ
+f	java:S116Y"LRename this field "W" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìÁôıÿÿÿÿ
+P
+java:S1854["5Remove this useless assignment to local variable "N".(’ıÈåùÿÿÿÿ
+A
+java:S1481["&Remove this unused "N" local variable.(’ıÈåùÿÿÿÿ
+P
+java:S1854v"5Remove this useless assignment to local variable "N".(’ıÈåùÿÿÿÿ
+A
+java:S1481v"&Remove this unused "N" local variable.(’ıÈåùÿÿÿÿ
+d	java:S100…"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃŠ»„
+H
+java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ
+G
+java:S1128	",Remove this unused import 'java.util.Stack'.(ŞÈ†üúÿÿÿÿ

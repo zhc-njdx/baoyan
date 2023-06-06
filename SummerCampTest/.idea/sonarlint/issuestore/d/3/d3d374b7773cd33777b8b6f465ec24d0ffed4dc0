@@ -1,0 +1,39 @@
+
+w
+java:S1192%"\Define a constant instead of duplicating this literal "è¯·é€‰æ‹©csvæ ¼å¼çš„æ–‡ä»¶" 3 times.(•çåºùÿÿÿÿ
+q
+java:S1104Ù"UMake textField a static final constant or non-public and provide accessors if needed.(‘ô–¸øÿÿÿÿ
+r
+java:S1104Ú"VMake textField1 a static final constant or non-public and provide accessors if needed.(ÍñÈˆÿÿÿÿÿ
+p
+java:S1104Û"TMake textArea a static final constant or non-public and provide accessors if needed.(´“éÙûÿÿÿÿ
+K
+java:S1444Ù"/Make this "public static textField" field final(‘ô–¸øÿÿÿÿ
+L
+java:S1444Ú"0Make this "public static textField1" field final(ÍñÈˆÿÿÿÿÿ
+J
+java:S1444Û".Make this "public static textArea" field final(´“éÙûÿÿÿÿ
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(É¡Œ‡øÿÿÿÿ
+g	java:S1015"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÜÚé™ıÿÿÿÿ
+H
+java:S1153Ç"1Directly append the argument of String.valueOf().(…Ó
+H
+java:S1153Ë"1Directly append the argument of String.valueOf().(ğØï™
+M
+java:S2589("7Remove this expression which always evaluates to "true"(·è€
+Q	java:S125"<This block of commented-out lines of code should be removed.(Çñğ
+T
+java:S1854>"9Remove this useless assignment to local variable "times".(¥»Áıÿÿÿÿ
+E
+java:S1481>"*Remove this unused "times" local variable.(¥»Áıÿÿÿÿ
+V	java:S125A"<This block of commented-out lines of code should be removed.(›ØÕùÿÿÿÿ
+Q
+java:S2696I"6Make the enclosing method "static" or remove this set.(ôñ³øÿÿÿÿ
+h
+java:S3776U"RRefactor this method to reduce its Cognitive Complexity from 40 to the 15 allowed.(ä¹¿Ò
+Q
+java:S1161÷":Add the "@Override" annotation above this method signature(³ıŸê
+b
+java:S1128"LRemove this unused import 'javax.swing.filechooser.FileNameExtensionFilter'.(èüºÍ
+I
+java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ
