@@ -1,6 +1,5 @@
 package utilities.ds.tree;
 
-import java.util.List;
 
 /**
  * 自定义的二叉搜索树
@@ -73,7 +72,7 @@ public class MyBinarySearchTree<T extends Comparable<T>> extends MyBinaryTree<T>
      * @return 最大值
      * @attention root不能为null
      */
-    private T findMaxValue(MyNode<T> root) {
+    protected T findMaxValue(MyNode<T> root) {
         MyNode<T> node = root;
         while (node.right != null) {
             node = node.right;
@@ -87,7 +86,7 @@ public class MyBinarySearchTree<T extends Comparable<T>> extends MyBinaryTree<T>
      * @return 最小值
      * @attention root不能为null
      */
-    private T findMinValue(MyNode<T> root) {
+    protected T findMinValue(MyNode<T> root) {
         MyNode<T> node = root;
         while (node.left != null) {
             node = node.left;
