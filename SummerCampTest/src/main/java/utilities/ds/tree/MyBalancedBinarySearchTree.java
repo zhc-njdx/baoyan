@@ -1,25 +1,48 @@
 package utilities.ds.tree;
 
+/**
+ * 自定义的自平衡二叉搜索树
+ * @param <T> 可比较的泛形参数
+ */
 public class MyBalancedBinarySearchTree<T extends Comparable<T>> extends MyBinarySearchTree<T>{
     public MyBalancedBinarySearchTree(T value) {
         super(value);
     }
 
+    /**
+     * 得到某节点的高度
+     * @param node 节点
+     * @return 高度: 叶子节点到该节点的最长路径的节点个数
+     */
     private int getHeight(MyNode<T> node) {
         if (node == null) return 0;
         return node.height;
     }
 
+    /**
+     * 得到一个节点的平衡因子
+     * @param node 节点
+     * @return 平衡因子
+     */
     private int getBalancedFactor(MyNode<T> node) {
         if (node == null) return 0;
         return getHeight(node.left) - getHeight(node.right);
     }
 
+    /**
+     * 更新一个节点的高度
+     * @param node 节点
+     */
     private void updateHeight(MyNode<T> node) {
         if (node == null) return;
         node.height = Math.max(getHeight(node.left), getHeight(node.right)) + 1;
     }
 
+    /**
+     * 左旋
+     * @param node 需要左旋的树的根节点
+     * @return 左旋后的树的根节点
+     */
     private MyNode<T> leftRotate(MyNode<T> node) {
         MyNode<T> newNode = node.right;
         node.right = newNode.left;
@@ -29,6 +52,11 @@ public class MyBalancedBinarySearchTree<T extends Comparable<T>> extends MyBinar
         return newNode;
     }
 
+    /**
+     * 右旋
+     * @param node 需要右旋的树的根节点
+     * @return 右旋后的树的根节点
+     */
     private MyNode<T> rightRotate(MyNode<T> node) {
         MyNode<T> newNode = node.left;
         node.left = newNode.right;
@@ -38,6 +66,12 @@ public class MyBalancedBinarySearchTree<T extends Comparable<T>> extends MyBinar
         return newNode;
     }
 
+    /**
+     * 向root为根节点的树中插入一个AVL节点
+     * @param root 根节点
+     * @param node 待插入的AVL节点
+     * @return 插入后树的根节点
+     */
     private MyNode<T> insertAVL(MyNode<T> root, MyNode<T> node) {
         if (root == null) return node;
 
@@ -53,6 +87,12 @@ public class MyBalancedBinarySearchTree<T extends Comparable<T>> extends MyBinar
         return adjustTree(root);
     }
 
+    /**
+     * 在root为根节点的树里删除一个AVL节点
+     * @param root 根节点
+     * @param value 待删除的AVL节点
+     * @return 删除后树的根节点
+     */
     private MyNode<T> deleteAVL(MyNode<T> root, T value) {
         if (root == null) return null;
 
@@ -73,6 +113,11 @@ public class MyBalancedBinarySearchTree<T extends Comparable<T>> extends MyBinar
         return adjustTree(root);
     }
 
+    /**
+     * 当树不平衡时，通过左旋或者右旋来调整该书树
+     * @param root 根节点
+     * @return 调整后的根节点
+     */
     private MyNode<T> adjustTree(MyNode<T> root) {
         updateHeight(root);
         int factor = getBalancedFactor(root);
@@ -104,15 +149,28 @@ public class MyBalancedBinarySearchTree<T extends Comparable<T>> extends MyBinar
         return root;
     }
 
+    /**
+     * AVL树插入新节点
+     * @param value 节点的value
+     */
     @Override
     public void insert(T value) {
         insert(new MyNode<>(value));
     }
+
+    /**
+     * AVL树插入节点
+     * @param node 待插入的节点
+     */
     @Override
     public void insert(MyNode<T> node) {
         root = insertAVL(root, node);
     }
 
+    /**
+     * AVL树删除节点
+     * @param value value
+     */
     @Override
     public void delete(T value) {
         root = deleteAVL(root, value);
