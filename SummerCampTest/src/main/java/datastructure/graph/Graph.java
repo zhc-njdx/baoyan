@@ -1,9 +1,6 @@
 package datastructure.graph;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class Graph {
     int n;
@@ -39,5 +36,52 @@ public class Graph {
             }
         }
         return false;
+    }
+
+    /**
+     * 深度遍历图
+     * @return 遍历结果
+     */
+    public List<Integer> dfsTraversal() {
+        boolean[] visited = new boolean[n];
+        List<Integer> result = new ArrayList<>();
+        dfs(0, visited, result);
+        return result;
+    }
+
+    private void dfs(int v, boolean[] visited, List<Integer> result) {
+        if (visited[v]) return;
+        visited[v] = true;
+        result.add(v);
+        for (Integer nei : graph.get(v)) {
+            dfs(nei, visited, result);
+        }
+    }
+
+    /**
+     * 广度遍历图
+     * @return 遍历结果
+     */
+    public List<Integer> bfsTraversal() {
+        List<Integer> result = new ArrayList<>();
+        Queue<Integer> queue = new LinkedList<>();
+        boolean[] visited = new boolean[n];
+        queue.add(0);
+        visited[0] = true;
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i ++) { // 每一层
+                Integer node = queue.poll();
+                if (node == null) continue;
+                result.add(node);
+                for (Integer nei : graph.get(node)) {
+                    if (!visited[nei]) {
+                        visited[nei] = true;
+                        queue.add(nei);
+                    }
+                }
+            }
+        }
+        return result;
     }
 }

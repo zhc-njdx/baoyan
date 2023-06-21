@@ -10,8 +10,8 @@ import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class MyFrame2017 extends JFrame {
-    private FileContent fileContent;
-    private JTextArea resultContent;
+    private FileContent fileContent; // 读取的文本内容
+    private JTextArea resultContent; // 展示搜索结果的文本域
     
     public MyFrame2017() {
 
@@ -45,7 +45,7 @@ public class MyFrame2017 extends JFrame {
                     content.add(line);
                 }
                 this.fileContent = new FileContent(content);
-                // 生成统计词频的文件: output.txt
+                // 生成统计词频的文件: result.txt
                 CalWordFreq c = new CalWordFreq(this.fileContent);
                 c.calc();
                 // 打开搜素窗口
@@ -98,11 +98,10 @@ public class MyFrame2017 extends JFrame {
     }
     
     private void doSearch(String options) {
-        // 搜索的逻辑
         OptionParser optionParser = new OptionParser(options);
-        Rule rule = optionParser.parse();
+        Rule rule = optionParser.parse(); // 解析搜索选项形成rule
         Search search = new Search(rule, fileContent);
-        search.doSearch();
+        search.doSearch(); // 进行搜索
         resultContent.setText(search.toString());
     }
 }
