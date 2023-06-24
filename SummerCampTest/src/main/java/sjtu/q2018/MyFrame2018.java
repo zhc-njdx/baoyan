@@ -57,6 +57,7 @@ public class MyFrame2018 extends JFrame {
         int code = fileChooser.showOpenDialog(getContentPane());
         if (code == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile();
+            // 循环直到打开的是csv文件
             while (code == JFileChooser.APPROVE_OPTION && !file.getName().endsWith("csv")) {
                 JOptionPane.showMessageDialog(fileChooser, "请选择csv文件", "文件类型错误",
                     JOptionPane.ERROR_MESSAGE);
