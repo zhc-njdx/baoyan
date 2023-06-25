@@ -6,13 +6,14 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 public class IOs {
     
     /**
-     * 将文件中的内容读取出来
+     * 使用BufferedReader将文件中的内容读取出来
      * @param filename 文件名
      * @return 文件内容
      */
@@ -27,7 +28,7 @@ public class IOs {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+        return Collections.emptyList();
     }
     
     /**
@@ -46,7 +47,7 @@ public class IOs {
         }catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+        return Collections.emptyList();
     }
     
     /**
@@ -66,7 +67,7 @@ public class IOs {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+        return Collections.emptyList();
     }
     
     /**

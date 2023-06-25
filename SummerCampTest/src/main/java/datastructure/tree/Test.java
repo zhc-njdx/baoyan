@@ -1,5 +1,8 @@
 package datastructure.tree;
 
+import algorithm.sort.BubbleSort;
+import algorithm.sort.Sort;
+
 public class Test {
     public static void main(String[] args) {
         MyBalancedBinarySearchTree<Integer> binarySearchTree = new MyBalancedBinarySearchTree<>(100);
