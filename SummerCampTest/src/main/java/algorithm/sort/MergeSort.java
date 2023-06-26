@@ -27,7 +27,7 @@ public class MergeSort<T extends Comparable<T>> implements Sort<T> {
         int k = begin;
         
         while (i < leftLen && j < rightLen) {
-            if (leftList.get(i).compareTo(rightList.get(j)) > 0) {
+            if (leftList.get(i).compareTo(rightList.get(j)) < 0) {
                 array[k] = leftList.get(i);
                 i++;
             } else {
