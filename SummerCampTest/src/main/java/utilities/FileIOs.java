@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-public class IOs {
+public class FileIOs {
     
     /**
      * 使用BufferedReader将文件中的内容读取出来
@@ -72,6 +72,7 @@ public class IOs {
     
     /**
      * 将指定内容写进文件中
+     * 接收一个字符串列表，将列表中的每个字符串作为一行写入文件
      * @param filename 文件名
      * @param content 文件内容
      */

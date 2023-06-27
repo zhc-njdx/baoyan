@@ -14,7 +14,7 @@ import java.util.Set;
 
 public class Main {
     public static final String dir = "D:\\study\\BaoYan\\postgraduate-recommendation\\assets\\sjtu-se\\2020机考\\small-case\\";
-    private Map<String, List<Record>> userKeywordCounts; // user -> record[]
+    private final Map<String, List<Record>> userKeywordCounts; // user -> record[]
     private List<Record> ranking; // record
     Map<Integer, String> idx2uid;
     private int[][] relations;

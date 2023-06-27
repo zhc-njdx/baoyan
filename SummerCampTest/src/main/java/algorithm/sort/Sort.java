@@ -1,10 +1,10 @@
 package algorithm.sort;
 
-import utilities.Utility;
+import utilities.ArrayUtils;
 
 public interface Sort<T extends Comparable<T>> {
     default void execute(T[] array, int begin, int end) throws RangeException {
-        if (Utility.isEmptyArray(array)) return;
+        if (ArrayUtils.isEmptyArray(array)) return;
         assertValidRange(begin, end);
         sort(array, begin, end);
     }

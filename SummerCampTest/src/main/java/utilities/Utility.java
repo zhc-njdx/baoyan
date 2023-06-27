@@ -312,24 +312,4 @@ public class Utility
         latitude = latitude.trim();
         return longitude.matches(reglo) && latitude.matches(regla);
     }
-    
-    /**
-     * 反转数组指定闭区间中的序列
-     * @param array 数组
-     * @param begin 开始位置
-     * @param end   结束位置
-     * @param <T>   数组中元素类型
-     */
-    public static <T> void reverseArray(T[] array, int begin, int end) {
-        int middle = begin + (end - begin) / 2;
-        for (int i = begin; i < middle; i ++) {
-            T tmp = array[i];
-            array[i] = array[end-(i-begin)];
-            array[end-(i-begin)] = tmp;
-        }
-    }
-    
-    public static <T> boolean isEmptyArray(T[] array) {
-        return array == null || array.length == 0;
-    }
 }

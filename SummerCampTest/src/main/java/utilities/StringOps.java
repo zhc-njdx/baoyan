@@ -44,7 +44,7 @@ public class StringOps {
         if (isEmptyString(line)) return EMPTY_STRING;
         String[] words = line.split(SPACE_STRING);
         int length = words.length;
-        Utility.reverseArray(words, 0, length-1);
+        ArrayUtils.reverseArray(words, 0, length-1);
         return StringConcat(SPACE_STRING, words);
     }
     
@@ -56,8 +56,6 @@ public class StringOps {
     public static boolean isEmptyString(String str) {
         return str == null || str.length() == 0;
     }
-    
-    
     
     
 }
