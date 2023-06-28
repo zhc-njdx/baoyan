@@ -36,7 +36,7 @@ public class Zombie {
         for (int i = 0; i < speed; i ++) {
             if (!grid.canZombieMove()) return isMove;
             if (grid.hasPlant()) { // 此时有植物肯定是土豆地雷
-                grid.plant.type = Plant.POTATO_ACTIVATED;
+                grid.plant.type = Plant.POTATO_ACTIVATED; // 激活土豆地雷
             }
             grid.removeZombie(this);
             isMove = true;

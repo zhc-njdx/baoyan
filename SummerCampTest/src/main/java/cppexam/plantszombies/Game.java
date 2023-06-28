@@ -10,7 +10,7 @@ public class Game {
     public static boolean zombieIntoRoom = false;
     public static final String TEST_FILE = "D:\\study\\BaoYan\\baoyan\\SummerCampTest\\src\\main\\java\\cppexam\\plantszombies\\test2.txt";
     
-    public void getInput() {
+    public void putPlantsAndZombies() {
         try(Scanner scanner = new Scanner(new File(TEST_FILE))){
             String[] counts = scanner.nextLine().split(" ");
             plantCnt = Integer.parseInt(counts[0]);
@@ -63,6 +63,11 @@ public class Game {
         }
     }
     
+    /**
+     * 打印本轮信息，并判断游戏是否结束
+     * @param round 轮次
+     * @return 游戏是否结束
+     */
     public boolean printRoundInfo(int round) {
         System.out.println(round + " " + plantCnt + " " + zombieCnt);
         if (zombieIntoRoom) {
@@ -76,7 +81,7 @@ public class Game {
     }
     
     public void begin() {
-        getInput();
+        putPlantsAndZombies();
         int round = 1;
         while (true) {
             plantAttack();
