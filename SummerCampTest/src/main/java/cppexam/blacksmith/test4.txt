@@ -1,0 +1,18 @@
+1 3
+1 1
+15
+add 1 5 4 1
+queryUser 1
+add 2 6 8 1
+queryOrder 1
+add 3 2 10 1
+queryOrder 3
+queryOrders 1
+add 6 1 5 1
+queryOrder 6
+add 5 10 2 1
+add 100 11 2 1
+add 7 12 2 1
+queryOrder 6
+queryUser 1
+queryOrders 1
