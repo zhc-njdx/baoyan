@@ -1,7 +1,5 @@
 package cppexam.plantszombies;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -39,7 +37,7 @@ public class Grid {
     
     /**
      * 僵尸是否能够通过这个grid
-     * @return
+     * @return 可以则返回true
      */
     public boolean canZombieMove() {
         return plant == null ||
@@ -50,6 +48,10 @@ public class Grid {
         return this.zombies != null && !this.zombies.isEmpty();
     }
     
+    /**
+     * 注意java.util.ConcurrentModificationException
+     * zombie.move() 会对list做修改 不能使用增强for循环
+     */
     public void zombiesMove() {
         int i = 0;
         while (i < zombies.size()) {
@@ -65,6 +67,10 @@ public class Grid {
         }
     }
     
+    /**
+     * 注意java.util.ConcurrentModificationException
+     * zombie.beAttacked(hurt) 会对list做修改 不能使用增强for循环
+     */
     public void zombiesBeAttacked(int hurt) {
         int i = 0;
         while (i < zombies.size()) {

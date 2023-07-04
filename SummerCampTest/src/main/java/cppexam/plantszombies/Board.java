@@ -1,7 +1,6 @@
 package cppexam.plantszombies;
 
 public class Board {
-    
     public static final int ROW = 5;
     public static final int COL = 10;
     
@@ -19,11 +18,7 @@ public class Board {
     }
     
     public static Grid getGrid(int row, int col) {
-        validatePos(row, col);
-        return grids[row][col];
-    }
-    
-    public static void validatePos(int row, int col) {
         if( !(0 <= row && row < ROW) || !(0 <= col && col < COL) ) throw new IndexOutOfBoundsException();
+        return grids[row][col];
     }
 }
