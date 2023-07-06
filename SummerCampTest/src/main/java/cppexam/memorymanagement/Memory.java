@@ -1,5 +1,7 @@
 package cppexam.memorymanagement;
 
+import utilities.Output;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,6 +25,9 @@ public class Memory {
     private static final String ALLOC_FAIL_FORMAT = "failed to alloc object %d\n";
     private static final String FREE_SUCCESS_FORMAT = "succeeded to free object %d\n";
     private static final String FREE_FAIL_MESSAGE = "invalid memory access";
+
+    public static int OUTPUT_TO = Output.FILE_OUTPUT;
+    public static String STREAM_NAME = "output.txt";
     
     private void initMemory() {
         Arrays.fill(mem, JUNK);
@@ -70,11 +75,10 @@ public class Memory {
         int addr = walk(unitShouldAlloc);
         if (addr != -1) {
             obj2Addr.put(id, addr);
-            System.out.format(ALLOC_SUCCESS_FORMAT, id);
+            Output.output(String.format(ALLOC_SUCCESS_FORMAT, id), OUTPUT_TO, STREAM_NAME);
         } else {
-            System.out.format(ALLOC_FAIL_FORMAT, id);
+            Output.output(String.format(ALLOC_FAIL_FORMAT, id), OUTPUT_TO, STREAM_NAME);
         }
-//        show();
     }
 
     public void free(int id) {
@@ -82,19 +86,18 @@ public class Memory {
             int addr = obj2Addr.get(id);
             int memoryUnit = (mem[addr] >> OFFSET) & SIZE_MASK;
             setFlag(addr, addr+memoryUnit*(UNIT/INT_SIZE)+1, FREE);
-            System.out.format(FREE_SUCCESS_FORMAT, id);
+            Output.output(String.format(FREE_SUCCESS_FORMAT, id), OUTPUT_TO, STREAM_NAME);
         } else {
-            System.out.println(FREE_FAIL_MESSAGE);
+            Output.output(FREE_FAIL_MESSAGE, OUTPUT_TO, STREAM_NAME);
         }
-//        show();
     }
 
     public void show() {
         for (int i : mem) {
             for (int bit : MOVE_BITS) {
-                System.out.format("%02x", (i >> bit) & MASK);
+                Output.output(String.format("%02x", (i >> bit) & MASK), OUTPUT_TO, STREAM_NAME);
             }
-            System.out.println();
+            Output.output("\n", OUTPUT_TO, STREAM_NAME);
         }
     }
 }

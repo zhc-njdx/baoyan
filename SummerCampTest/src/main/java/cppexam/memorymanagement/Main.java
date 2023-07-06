@@ -1,12 +1,26 @@
 package cppexam.memorymanagement;
 
+import utilities.Output;
+
 import java.io.File;
 import java.util.Scanner;
 
 public class Main {
-    public static String TEST_FILE = "E:\\Edownload\\memory-management\\test_cases\\test_3.in";
+    public static String TEST_FILE = "/Users/zhenghanchao/zhc/baoyan/SummerCampTest/src/main/java/cppexam/memorymanagement/test1.txt";
     public static void main(String[] args) {
-        String testFile = args[0];
+        String testFile;
+        if (args.length >= 2) {
+            testFile = args[0];
+            Memory.STREAM_NAME = args[1];
+        } else {
+            testFile = TEST_FILE;
+            Memory.STREAM_NAME = "";
+        }
+        if (!Memory.STREAM_NAME.isEmpty()) {
+            Memory.OUTPUT_TO = Output.FILE_OUTPUT;
+        } else {
+            Memory.OUTPUT_TO = Output.STANDARD_OUTPUT;
+        }
         try (Scanner scanner = new Scanner(new File(testFile))) {
             String[] s = scanner.nextLine().split(" ");
             int bytes = Integer.parseInt(s[0]);

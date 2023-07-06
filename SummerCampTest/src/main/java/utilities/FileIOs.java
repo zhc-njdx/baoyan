@@ -97,6 +97,7 @@ public class FileIOs {
             while ((line1 = reader1.readLine()) != null && (line2 = reader2.readLine()) != null) {
                 if (!line1.equals(line2)) return false;
             }
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
         }
