@@ -86,6 +86,23 @@ public class FileIOs {
         }
     }
     
+    public static boolean diff(String file1, String file2) {
+        try(BufferedReader reader1 = new BufferedReader(new FileReader(file1));
+            BufferedReader reader2 = new BufferedReader(new FileReader(file2))) {
+            long lines1 = reader1.lines().count();
+            long lines2 = reader2.lines().count();
+            if (lines1 != lines2) return false;
+            String line1;
+            String line2;
+            while ((line1 = reader1.readLine()) != null && (line2 = reader2.readLine()) != null) {
+                if (!line1.equals(line2)) return false;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    
     
 
 }
