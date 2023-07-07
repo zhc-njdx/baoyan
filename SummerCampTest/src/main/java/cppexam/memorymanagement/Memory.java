@@ -24,7 +24,7 @@ public class Memory {
     private static final String ALLOC_SUCCESS_FORMAT = "succeeded to alloc object %d\n";
     private static final String ALLOC_FAIL_FORMAT = "failed to alloc object %d\n";
     private static final String FREE_SUCCESS_FORMAT = "succeeded to free object %d\n";
-    private static final String FREE_FAIL_MESSAGE = "invalid memory access";
+    private static final String FREE_FAIL_MESSAGE = "invalid memory access\n";
 
     public static int OUTPUT_TO = Output.FILE_OUTPUT;
     public static String STREAM_NAME = "output.txt";

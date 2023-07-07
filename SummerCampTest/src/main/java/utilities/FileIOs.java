@@ -85,7 +85,13 @@ public class FileIOs {
             e.printStackTrace();
         }
     }
-    
+
+    /**
+     * 判断两个文件内容是否一致
+     * @param file1 文件1
+     * @param file2 文件2
+     * @return 是否一致
+     */
     public static boolean diff(String file1, String file2) {
         try(BufferedReader reader1 = new BufferedReader(new FileReader(file1));
             BufferedReader reader2 = new BufferedReader(new FileReader(file2))) {
@@ -103,7 +109,30 @@ public class FileIOs {
         }
         return false;
     }
-    
+
+    /**
+     * 删除目录下的匹配某个格式(包含pattern字符串)的全部文件
+     * @param dir 目录
+     * @param pattern 格式
+     * @return 是否完成删除
+     */
+    public static boolean deleteFiles(String dir, String pattern) {
+        File directory = new File(dir);
+        if (directory.exists() && directory.isDirectory()) {
+            File[] files = directory.listFiles();
+            if (files == null) return false;
+            for (File file : files) {
+                if (file.isFile() && file.getName().contains(pattern)) {
+                    boolean delete = file.delete();
+                    if (!delete) {
+                        System.out.println("fail to delete " + file.getName());
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
     
 
 }
