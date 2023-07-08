@@ -1,0 +1,10 @@
+8 3 4
+3 2 1
+aaaa
+b
+c
+d
+eeee
+f
+g
+h
