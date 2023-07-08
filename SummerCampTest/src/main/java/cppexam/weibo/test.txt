@@ -1,0 +1,17 @@
+16
+post 1 5 2
+getRecent 1 1 0
+follow 1 2
+post 2 6 2
+getRecent 1 5 2
+post 2 4 1
+post 2 3 0
+getRecent 1 5 1
+follow 2 1
+getRecent 1 5 1
+getRecent 2 5 2
+unfollow 1 2
+getRecent 1 10 2
+getFollows 1
+getFans 1
+getWeibos 2
