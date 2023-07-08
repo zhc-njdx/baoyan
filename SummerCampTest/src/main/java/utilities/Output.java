@@ -3,6 +3,9 @@ package utilities;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 
+/**
+ * 控制输出流的位置
+ */
 public class Output {
     public static final int STANDARD_OUTPUT = 0;
     public static final int ERROR_OUTPUT = 1;

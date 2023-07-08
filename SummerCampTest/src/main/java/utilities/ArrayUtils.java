@@ -3,7 +3,7 @@ package utilities;
 public class ArrayUtils {
     
     /**
-     * 反转数组指定闭区间中的序列
+     * 反转数组指定闭区间[begin, end]中的序列
      * @param array 数组
      * @param begin 开始位置
      * @param end   结束位置
@@ -12,9 +12,7 @@ public class ArrayUtils {
     public static <T> void reverseArray(T[] array, int begin, int end) {
         int middle = begin + (end - begin) / 2;
         for (int i = begin; i <= middle; i ++) {
-            T tmp = array[i];
-            array[i] = array[end-(i-begin)];
-            array[end-(i-begin)] = tmp;
+            swap(array, i, end-(i-begin));
         }
     }
     
