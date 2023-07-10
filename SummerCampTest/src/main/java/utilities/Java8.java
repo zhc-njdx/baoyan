@@ -10,27 +10,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-/**
- * 学习Stream API的使用
- * 1. Stream 的创建
- * 2. Stream 的操作
- *    2.1 分为中间操作和终止操作
- *    2.2 Iterating
- *    2.3 Filtering
- *    2.4 Mapping
- *    2.5 Matching
- *    2.6 Reduction
- *    2.7 Collecting
- */
 public class Java8 {
-    public static void main(String[] args) {
-        List<String> list = new ArrayList<>();
-        list.add("zhhc");
-        list.add("xzt");
-        list.add("wwwhh");
-        Stream<String> stream = list.stream();
-        stream.forEach(System.out::println);
-    }
 
     public static <T> Stream<T> streamOf(List<T> list){
         return list == null || list.isEmpty() ? Stream.empty() : list.stream();

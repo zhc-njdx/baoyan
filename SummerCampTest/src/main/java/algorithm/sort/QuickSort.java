@@ -1,5 +1,7 @@
 package algorithm.sort;
 
+import utilities.ArrayUtils;
+
 public class QuickSort<T extends Comparable<T>> implements Sort<T> {
     @Override
     public void sort(T[] array, int begin, int end) {
@@ -16,7 +18,7 @@ public class QuickSort<T extends Comparable<T>> implements Sort<T> {
         for (int j = begin; j <= end; j ++) {
             if (array[j].compareTo(pivot) <= 0) {
                 i ++;
-                swap(array, i, j);
+                ArrayUtils.swap(array, i, j);
             }
         }
         return i;

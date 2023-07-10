@@ -11,9 +11,6 @@ public class Output {
     public static final int ERROR_OUTPUT = 1;
     public static final int FILE_OUTPUT = 2;
 
-    public static final String DIRECT_WRITE = "0";
-    public static final String LINE_WRAP_WRITE = "1";
-
     public static void output(String content, int to, String... options) {
         switch (to) {
             case STANDARD_OUTPUT:

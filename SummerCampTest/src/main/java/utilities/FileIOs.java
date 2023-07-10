@@ -1,10 +1,6 @@
 package utilities;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -72,12 +68,12 @@ public class FileIOs {
     
     /**
      * 将指定内容写进文件中
-     * 接收一个字符串列表，将列表中的每个字符串作为一行写入文件
+     * 接收多个字符串列表，一个作为一行写入文件
      * @param filename 文件名
      * @param content 文件内容
      */
-    public static void writeFile(String filename, List<String> content) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
+    public static void writeFile(String filename, boolean append, String... content) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename, append))) {
             for (String s : content) {
                 writer.write(s+"\n");
             }
@@ -98,11 +94,13 @@ public class FileIOs {
             long lines1 = reader1.lines().count();
             long lines2 = reader2.lines().count();
             if (lines1 != lines2) return false;
+
             String line1;
             String line2;
             while ((line1 = reader1.readLine()) != null && (line2 = reader2.readLine()) != null) {
                 if (!line1.equals(line2)) return false;
             }
+
             return true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -125,13 +123,33 @@ public class FileIOs {
                 if (file.isFile() && file.getName().contains(pattern)) {
                     boolean delete = file.delete();
                     if (!delete) {
-                        System.out.println("fail to delete " + file.getName());
+                        System.out.println("Fail to delete " + file.getName());
                         return false;
                     }
                 }
             }
         }
         return true;
+    }
+
+    /**
+     * 创建一个新的文件
+     * @param filename 文件名
+     * @return 是否创建成功
+     */
+    public static boolean createFile(String filename) {
+        File file = new File(filename);
+        try {
+            if (file.createNewFile()) {
+                return true;
+            } else {
+                System.out.println("Fail to create the new file");
+                return false;
+            }
+        } catch (IOException e) {
+            System.out.println("IOException when create the file " + filename);
+            return false;
+        }
     }
     
 

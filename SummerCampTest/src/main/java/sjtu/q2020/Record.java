@@ -1,6 +1,6 @@
 package sjtu.q2020;
 
-public class Record {
+public class Record implements Comparable<Record>{
     private String keyword;
     private int count;
     
@@ -22,15 +22,18 @@ public class Record {
         return count;
     }
     
-    public void setKeyword(String keyword) {
-        this.keyword = keyword;
-    }
-    
-    public void setCount(int count) {
-        this.count = count;
-    }
-    
     public void incrementCount() {
         this.count++;
+    }
+
+    @Override
+    public int compareTo(Record r) {
+        if (count != r.count) return count - r.count;
+        return r.keyword.compareTo(keyword);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s %d", keyword, count);
     }
 }

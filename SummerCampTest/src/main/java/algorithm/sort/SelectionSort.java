@@ -1,5 +1,7 @@
 package algorithm.sort;
 
+import utilities.ArrayUtils;
+
 public class SelectionSort<T extends Comparable<T>> implements Sort<T>{
     
     @Override
@@ -12,7 +14,7 @@ public class SelectionSort<T extends Comparable<T>> implements Sort<T>{
                     minIndex = j;
                 }
             }
-            swap(array, minIndex, i);
+            ArrayUtils.swap(array, minIndex, i);
         }
     }
 }

@@ -1,10 +1,5 @@
 package datastructure.graph;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-
 /**
  * 无向无权图
  * 用idx表示节点 idx = [0, n-1]
